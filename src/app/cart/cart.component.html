@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Mi Carrito</h2>
+
+  @if (items.length === 0) {
+    <p>No tienes productos en el carrito.</p>
+  }
+
+  @for (item of items; track item._id) {
+    <div class="cart-item">
+      <img [src]="item.thumbnail" [alt]="item.title" />
+      <div class="item-info">
+        <p class="brand">{{ item.brand }}</p>
+        <h3>{{ item.title }}</h3>
+        <p>Cantidad: {{ item.amount }}</p>
+        <p class="price">S/ {{ item.price | number: '1.2-2' }}</p>
+      </div>
+      <button class="remove-btn" (click)="removeItem(item._id)">Eliminar</button>
+    </div>
+  }
+
+  @if (cart) {
+    <div class="total">
+      <strong>Total: S/ {{ cart.total | number: '1.2-2' }}</strong>
+    </div>
+  }
+</div>

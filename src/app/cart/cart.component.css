@@ -1,0 +1,54 @@
+.container {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.brand {
+  color: #888;
+  font-size: 12px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.remove-btn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.total {
+  text-align: right;
+  font-size: 18px;
+  margin-top: 16px;
+}
