@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Productos</h2>
+
+  @if (message) {
+    <p class="message">{{ message }}</p>
+  }
+
+  <div class="products-grid">
+    @for (product of products; track product.id) {
+      <div class="product-card">
+        <div class="discount-badge">-{{ product.discountPercentage }}%</div>
+        <img [src]="product.thumbnail" [alt]="product.title" />
+        <div class="product-info">
+          <p class="brand">{{ product.brand }}</p>
+          <h3>{{ product.title }}</h3>
+          <div class="prices">
+            <span class="total-price">S/ {{ product.price | number: '1.2-2' }}</span>
+            <span class="offer-price">
+              S/ {{ product.discountedPrice | number: '1.2-2' }} Oferta
+            </span>
+          </div>
+          <button (click)="addToCart(product.id)">Agregar al carrito</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
